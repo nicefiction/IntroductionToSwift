@@ -26,6 +26,7 @@
 		091916412507E658007A0309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091916442507E658007A0309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		091916462507E658007A0309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0919164D2507E69A007A0309 /* Day1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +59,25 @@
 		091916352507E654007A0309 /* IntroductionToSwift */ = {
 			isa = PBXGroup;
 			children = (
+				0919164C2507E66E007A0309 /* Playgrounds */,
+				091916412507E658007A0309 /* Assets.xcassets */,
 				091916362507E654007A0309 /* AppDelegate.swift */,
 				091916382507E654007A0309 /* DocumentBrowserViewController.swift */,
 				0919163A2507E654007A0309 /* DocumentView.swift */,
 				0919163C2507E654007A0309 /* Document.swift */,
 				0919163E2507E654007A0309 /* Main.storyboard */,
-				091916412507E658007A0309 /* Assets.xcassets */,
 				091916432507E658007A0309 /* LaunchScreen.storyboard */,
 				091916462507E658007A0309 /* Info.plist */,
 			);
 			path = IntroductionToSwift;
+			sourceTree = "<group>";
+		};
+		0919164C2507E66E007A0309 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				0919164D2507E69A007A0309 /* Day1.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
