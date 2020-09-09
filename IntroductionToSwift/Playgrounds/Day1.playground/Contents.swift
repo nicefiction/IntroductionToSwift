@@ -1,7 +1,10 @@
-import UIKit
+import Foundation
 
-var str = "Hello, playground"
-
+/* DAY 1
+ * Variables
+ * Simple Data Types
+ * String Interpolation
+ */
 /* Strings :
  */
 
