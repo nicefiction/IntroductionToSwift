@@ -29,6 +29,7 @@
 		0919164D2507E69A007A0309 /* Day1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		09DDCCCD25092CD500B41EB6 /* Day2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		09DDCCCE250A27E700B41EB6 /* Day3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		09DDCCCF250BB86600B41EB6 /* Day4.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day4.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 				0919164D2507E69A007A0309 /* Day1.playground */,
 				09DDCCCD25092CD500B41EB6 /* Day2.playground */,
 				09DDCCCE250A27E700B41EB6 /* Day3.playground */,
+				09DDCCCF250BB86600B41EB6 /* Day4.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
