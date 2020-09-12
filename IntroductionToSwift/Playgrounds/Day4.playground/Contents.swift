@@ -1,6 +1,8 @@
-import UIKit
+import Foundation
 
-var str = "Hello, playground"
+/* DAY 4
+ * Loops
+ */
 
 
 /* FOR LOOPS

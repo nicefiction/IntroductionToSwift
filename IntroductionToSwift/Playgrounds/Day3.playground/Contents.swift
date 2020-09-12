@@ -1,5 +1,8 @@
 import Foundation
 
+/* DAY 3
+ * Operators and Conditions
+ */
 
 
 /* ARITHMETIC OPERATORS
