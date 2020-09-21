@@ -162,7 +162,14 @@ func makeRandomNumberGenerator2()
     -> () -> Int {
     
     var previousNumber = 0
-    // What you’re seeing here is the power of closure capturing: that previousNumber variable isn’t inside the closure, but because the closure requires it to exist in order to run it will be captured. That is, Swift will make sure it stays in existence even after makeRandomNumberGenerator() has finished running and it would normally have been destroyed.
+    /* What you’re seeing here is the power of closure capturing :
+     * that previousNumber variable isn’t inside the closure ,
+     * but because the closure requires it to exist in order to run
+     * it will be captured . That is ,
+     * Swift will make sure it stays in existence
+     * even after makeRandomNumberGenerator() has finished running
+     * and it would normally have been destroyed .
+     */
     
     return {
 //        var previousNumber = 0
