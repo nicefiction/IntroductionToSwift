@@ -231,30 +231,3 @@ colors.remove(at : 0)
 
 colors.insert("Green" ,
               at : 0)
-
-
-
-/* ACCESS CONTROL
- */
-
-struct App {
-    var name: String
-    private var sales = 0
-    
-    init(name: String) {
-        self.name = name
-    }
-}
-
-let spotify = App(name : "Spotify")
-
-
-struct Doctor {
-    var name: String
-    var location: String
-    private var currentPatient = "No one"
-}
-
-//let drJones = Doctor(name : "Esther Jones" ,
-//                     location : "Bristol")
-// ERROR MESSAGE : 'Doctor' initializer is inaccessible due to 'private' protection level
