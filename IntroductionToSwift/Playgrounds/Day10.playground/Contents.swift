@@ -171,3 +171,32 @@ class Light {
 
 let light = Light()
 light.toggle()
+
+
+
+/* DEINIT
+ */
+
+class Human {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        print("1. \(name) is alive !")
+    }
+    
+    func printGreeting() {
+        print("2. Hello , I am \(name) .")
+    }
+    
+    deinit {
+        print("3. \(name) is no more ...")
+    }
+}
+
+
+let humans: [String] = ["Ozma" , "Glinda" , "Dahlia" , "Olivia" , "Dorothy"]
+for name in humans {
+    let human = Human(name : name)
+    human.printGreeting()
+}

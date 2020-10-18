@@ -188,3 +188,62 @@ print("The album is \(albumOC)") // Prints : "The album is Optional("TAYLOR SWIF
 let albumNCO = albumReleased(year: 2006) ?? "unknown"
 print("The album is \(albumNCO) .") // Prints : The album is Taylor Swift
 
+
+func compare(firstWord: String ,
+             secondWord: String)
+    -> Bool {
+    
+    return firstWord.uppercased() == secondWord.uppercased()
+}
+
+compare(firstWord: "hello" ,
+        secondWord: "Hello")
+
+
+
+/* ENUMERATIONS
+ */
+// Enums with additional values :
+
+enum WeatherType {
+    case sun
+    case cloud
+    case rain
+    case wind(speed: Int)
+    case snow
+}
+
+func getHaterStatus(weather: WeatherType)
+    -> String? {
+    
+    switch weather {
+    case .sun                              : return nil
+    case .wind(let speed) where speed < 10 : return "meh"
+        //  This uses the let keyword to access the value inside a case , then the where keyword for pattern matching .
+    case .cloud , .wind                    : return "dislike"
+    case .rain , .snow                     : return "hate"
+    }
+}
+
+let wind = getHaterStatus(weather : WeatherType.wind(speed : 5))
+let sun = getHaterStatus(weather: WeatherType.sun)
+//print(sun)
+sun?.count
+
+if let _sun = sun {
+    _sun.count
+} else {
+    "There is no sun ."
+}
+
+//if let _rain = getHaterStatus(weather: .rain) {
+//    return _rain
+//} else {
+//    return "It is not raining ."
+//}
+
+
+/* NOTE
+ * Associated values attach extra data to an enum case ;
+ * raw values are underlying data types for each case .
+ */

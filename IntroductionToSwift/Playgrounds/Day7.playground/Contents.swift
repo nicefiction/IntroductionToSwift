@@ -189,3 +189,19 @@ let generator2 = makeRandomNumberGenerator2()
 for _ in 1...10 {
     print(generator2())
 }
+
+
+
+/* DAILY CHALLENGE
+ */
+
+func learnSwift(using approach: () -> String) {
+    let result = approach()
+    print(result)
+}
+
+let learnWithProjects = {
+    return "I made real apps !"
+}
+
+learnSwift(using : learnWithProjects)

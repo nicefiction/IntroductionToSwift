@@ -204,3 +204,18 @@ var myNumber: Int = 0
  * which is an explicit recognition that you are aware it is being used as inout :
  */
 doubleInPlace(number: &myNumber)
+
+
+
+/* DAILY CHALLENGE
+ */
+
+func joinWords(firstWord: String ,
+               secondWord: String)
+    -> String {
+    
+    return "\(firstWord)\(secondWord)"
+}
+
+joinWords(firstWord : "car" ,
+          secondWord : "pet")
