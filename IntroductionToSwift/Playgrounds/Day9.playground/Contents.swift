@@ -50,6 +50,57 @@ let employeeC = Employee2(name : "Ozma" ,
                           yearsActive : 2)
 
 
+struct Country {
+    var name: String
+    var usesImperialMeasurements: Bool
+    
+    init(countryName: String) {
+        self.name = countryName
+        
+        let imperialCountries = ["Liberia" , "Myanmar" , "USA"]
+        
+        if imperialCountries.contains(name) {
+            usesImperialMeasurements = true
+        } else {
+            usesImperialMeasurements = false
+        }
+    }
+}
+
+
+struct Message {
+    var from: String
+    var to: String
+    var content: String
+    
+    init() {
+        from    = "Unknown" // OLIVIER : You can assign default values in the initializer .
+        to      = "Unknown"
+        content = "Yo"
+    }
+}
+
+let message = Message()
+
+
+struct Cabinet {
+    var height: Double
+    var width: Double
+    var area: Double
+    
+    init (itemHeight: Double ,
+          itemWidth: Double) {
+        
+        height = itemHeight
+        width  = itemWidth
+        area   = height * width // OLIVIER : This acts a bit as a computed property .
+    }
+}
+
+let drawers = Cabinet(itemHeight : 1.4 ,
+                      itemWidth : 1.0)
+
+
 
 /* SELF
  * Inside a method ,
@@ -186,8 +237,40 @@ struct Cat {
 }
 
 
+struct Student3 {
+    static var classSize: Int = 0
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        Student3.classSize += 1
+    }
+}
+
+let student10 = Student3(name : "Anna")
+let student11 = Student3(name : "Hannah")
+let student12 = Student3(name : "Johannah")
+let student13 = Student3(name : "Ann")
+print("Student Class size : \(Student3.classSize)")
+
+
+struct Pokemon {
+    static var numberCaught = 0
+    var name: String
+    
+    static func catchPokemon() {
+        print("Caught!")
+        Pokemon.numberCaught += 1
+    }
+}
+
+
 
 /* ACCESS CONTROL
+ */
+/* NOTE :
+ * If there is a private property ,
+ * Swift is unable to generate its memberwise initializer for us .
  */
 
 struct App {
@@ -211,3 +294,100 @@ struct Doctor {
 //let drJones = Doctor(name : "Esther Jones" ,
 //                     location : "Bristol")
 // ERROR MESSAGE : 'Doctor' initializer is inaccessible due to 'private' protection level
+
+
+
+/* REVIEW
+ * Property Observers
+ */
+/* Property observers let you run code
+ * before or after any property changes .
+ */
+
+struct Person {
+    var clothes: String {
+        didSet {
+            print("I'm changing to \(clothes)")
+        }
+    }
+}
+
+
+//struct FootballMatch {
+//    let homeTeamScore: Int {
+//        didSet {
+//            print("Yay - we scored!")
+//        }
+//    }
+//    let awayTeamScore: Int {
+//        didSet {
+//            print("Boo - they scored!")
+//        }
+//    }
+//}
+// ERROR : You cannot attach a property observer to a constant, because it will never change .
+
+
+struct BankAccount {
+    var name: String
+    var isMillionnaire = false
+    
+    var balance: Int = 1_000 { // OLIVIER : You can give the property a default value . This is different from a Computed Property .
+        didSet {
+            if balance > 1_000_000 {
+                isMillionnaire = true
+            } else {
+                isMillionnaire = false
+            }
+        }
+    }
+}
+
+
+struct Human {
+    private var id: Int
+    
+    init(id: Int) {
+        self.id = id
+    }
+    
+    func identify() -> String {
+        return "My social security number is \(id)"
+    }
+}
+
+
+let dorothy = Human(id : 1)
+print(dorothy.identify())
+
+
+//struct Doctor {
+//    var name: String
+//    var location: String
+//    private var currentPatient = "No one"
+//}
+//let drJones = Doctor(name: "Esther Jones", location: "Bristol")
+// ERROR : This has a private property , so Swift is unable to generate its memberwise initializer for us .
+
+
+struct App2 {
+    var name: String
+    private var sales = 0
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+let spotify2 = App(name: "Spotify")
+
+
+struct School {
+    var staffNames: [String]
+    private var studentNames: [String]
+    
+    init(staff: String...) {
+        self.staffNames = staff
+        self.studentNames = [String]()
+    }
+}
+let royalHigh = School(staff: "Dorothy" , "Ozma" , "Glinda")

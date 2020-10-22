@@ -230,17 +230,19 @@ let sun = getHaterStatus(weather: WeatherType.sun)
 //print(sun)
 sun?.count
 
-if let _sun = sun {
+if
+    let _sun = sun {
     _sun.count
 } else {
     "There is no sun ."
 }
 
-//if let _rain = getHaterStatus(weather: .rain) {
-//    return _rain
-//} else {
-//    return "It is not raining ."
-//}
+if
+    let _rain = getHaterStatus(weather: .rain) {
+    _rain
+} else {
+    "It is not raining ."
+}
 
 
 /* NOTE

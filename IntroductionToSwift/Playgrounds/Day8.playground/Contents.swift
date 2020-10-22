@@ -186,6 +186,21 @@ let ozma = Hum4n(name: "Glinda")
  * – you must mark them both as mutating .
  */
 
+struct MeetingRoom {
+    var isBooked = true
+    mutating func book(for name: String) {
+        if isBooked {
+            print("Sorry, the meeting room is already taken.")
+        } else {
+            isBooked = true
+            print("It's reserved for \(name).")
+        }
+    }
+}
+
+var room = MeetingRoom(isBooked : false)
+room.book(for: "Dorothy")
+print(room.isBooked)
 
 
 /* PROPERTIES AND METHODS OF STRINGS

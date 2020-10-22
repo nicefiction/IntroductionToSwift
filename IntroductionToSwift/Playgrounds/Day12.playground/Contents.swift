@@ -207,6 +207,11 @@ let crusherScore = scores["Crusher"] ?? 0
 let crusherScore1 = scores["Crusher" , default : 0]
 
 
+let jeansNumber: Int? = nil
+let jeans = jeansNumber ?? 501
+
+
+
 /* OPTIONAL CHAINING
  * Swift’s optional chaining lets us dig through several layers of optionals
  * in a single line of code ,
@@ -376,3 +381,21 @@ struct Dog {
     }
 }
 let dog = Dog(name: "Fido")
+
+
+
+//func population(of city: String)
+//    -> Int? {
+//
+//    if city == "Paris" {
+//        return 2_200_000
+//    }
+//
+//    return nil
+//}
+//
+//let pop = population(of : "Tokyo")! // ERROR
+
+//let age2: Int = 20
+//let allowedMessage: String? = age2 >= 21 ? "Welcome!" : nil
+//let result = allowedMessage! // ERROR
