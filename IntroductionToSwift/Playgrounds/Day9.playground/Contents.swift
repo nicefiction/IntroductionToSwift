@@ -374,11 +374,22 @@ struct App2 {
     var name: String
     private var sales = 0
     
-    init(name: String) {
+    init(name: String) { // OLIVIER : This needs an initilazer for name because Swift is unable to generate its memberwise initializer for us because of the private property .
         self.name = name
     }
 }
 let spotify2 = App(name: "Spotify")
+
+
+class Pizza {
+    private var toppings = [String]()
+    
+    func add(topping: String) {
+        toppings.append(topping)
+    }
+}
+var pizza = Pizza()
+pizza.add(topping: "Mushrooms")
 
 
 struct School {
@@ -391,3 +402,6 @@ struct School {
     }
 }
 let royalHigh = School(staff: "Dorothy" , "Ozma" , "Glinda")
+
+
+

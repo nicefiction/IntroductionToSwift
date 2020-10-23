@@ -152,7 +152,6 @@ var barbecue = Barbecue()
 barbecue.addBricks(4)
 
 
-
 class Light {
     
     var onState = false
@@ -171,6 +170,18 @@ class Light {
 
 let light = Light()
 light.toggle()
+
+
+struct Park {
+    var numberOfFlowers = 1000
+    
+    mutating func plantFlowers() {
+        numberOfFlowers += 50
+    }
+}
+
+let park = Park()
+// park.plantFlowers() // ERROR : Cannot use mutating member on immutable value : 'park' is a 'let' constant .
 
 
 
@@ -200,3 +211,6 @@ for name in humans {
     let human = Human(name : name)
     human.printGreeting()
 }
+
+let ozma = Human(name: "Ozma")
+ozma.printGreeting()
