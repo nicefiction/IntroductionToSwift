@@ -31,6 +31,7 @@
 		096AC043251A30B900C4B8B1 /* Day9.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day9.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		096AC045251CCA8100C4B8B1 /* Day10.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day10.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		096AC047251E60F300C4B8B1 /* Day11.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day11.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		097AB22325440EAB001F5AED /* Day15.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day15.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		098AE083253768D900E3245A /* DailyChallenge.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DailyChallenge.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		099A45AA252C5B0A00EED6B0 /* Day13.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day13.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		099A45AC252EE87F00EED6B0 /* Day14.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Day14.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -103,6 +104,7 @@
 				09FE89A32523A838008CAFD1 /* Day12.playground */,
 				099A45AA252C5B0A00EED6B0 /* Day13.playground */,
 				099A45AC252EE87F00EED6B0 /* Day14.playground */,
+				097AB22325440EAB001F5AED /* Day15.playground */,
 				098AE083253768D900E3245A /* DailyChallenge.playground */,
 			);
 			path = Playgrounds;

@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 /* DAY 14
  * SWIFT REVIEW DAY 2
