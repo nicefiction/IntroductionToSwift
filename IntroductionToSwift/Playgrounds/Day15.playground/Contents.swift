@@ -600,3 +600,184 @@ let visit = visitPlaces()
 visit("London")
 visit("New York")
 visit("London")
+
+
+
+/* PROTOCOLS
+ */
+/* NOTE
+ * Both properties have { get set } after them .
+ * This means that conforming types must make them both
+ * gettable (readable)
+ * and settable (writeable) ,
+ * which in turn means
+ * if a type says it is compatible with the Employee protocol
+ * it must make those two properties variables rather than constants .
+ */
+/* NOTE
+ * It is not possible to create set only properties in Swift .
+ */
+
+protocol Employee {
+    var name: String { get set }
+    var jobTitle: String { get set }
+    
+    func doWork()
+}
+
+struct Executive: Employee {
+    var name: String = "Steve Jobs"
+    var jobTitle: String = "CEO"
+    
+    func doWork() {
+        print("I am strategizing .")
+    }
+}
+
+struct Manager: Employee {
+    var name: String = "Maurice Moss"
+    var jobTitle: String = "Head of IT"
+    
+    func doWork() {
+        print("I am turning it on and off again .")
+    }
+}
+
+let staff: [Employee] = [
+    Executive() , Manager()
+]
+
+for person in staff {
+    person.doWork()
+}
+
+
+protocol HasEngine {
+    func startEngine()
+}
+
+protocol HasTrunk {
+    func openTrunk()
+}
+
+struct Car: HasEngine, HasTrunk {
+    func startEngine() {
+        print("Start your engine .")
+    }
+    
+    func openTrunk() {
+        print("Open the trunk .")
+    }
+}
+
+
+/* EXTENSIONS
+ * In some ways , extensions are similar to subclasses ,
+ * so why use extensions at all ?
+ * The main reason is extensibility :
+ * extensions work across all data types ,
+ * and they don't conflict when you have more than one .
+ */
+
+var myInt: Int = 10
+
+extension Int {
+    
+    mutating func plusOne() {
+//        -> Int {
+        
+//        return self + 1
+        self += 1
+    }
+}
+
+myInt.plusOne()
+// 5.plusOne()
+/* NOTE :
+ * Swift doesn't let you modify self inside an extension by default .
+ * The reason is that we could call plusOne() using 5.plusOne() ,
+ * and clearly you can't modify the number 5 to mean something else .
+ */
+print(myInt)
+
+// let otherInt: Int = 6
+// otherInt.plusOne()
+// ERROR : Swift won't let you modify constants .
+
+
+/* PROTOCOL EXTENSIONS
+ * Protocol extensions let us define implementations of things inside the protocol ,
+ * adding the functionality to all types that conform to the protocol in a single place .
+ */
+
+protocol SmartPhone {
+    func makeCall(to name: String)
+}
+
+extension SmartPhone {
+    func makeCall(to name: String) {
+        print("Dialling \(name)...")
+    }
+}
+
+
+
+/* PROTOCOLS AND EXTENSIONS SUMMARY
+ */
+
+protocol HasAge {
+    var age: Int { get set }
+    mutating func celebrateBirthday()
+//    func celebrateBirthday()
+}
+
+class Halloween: HasAge {
+    var age: Int = 42
+    
+    func celebrateBirthday() {
+        age += 1
+        print("I am \(age) years old .")
+    }
+}
+
+let olivier = Halloween()
+olivier.celebrateBirthday()
+
+
+struct Birthday: HasAge {
+    var age: Int = 44
+    
+//    mutating func celebrateBirthday() {
+    mutating func celebrateBirthday() {
+        age += 1
+        print("My age : \(age)")
+    }
+}
+
+var birthday = Birthday()
+birthday.celebrateBirthday()
+
+
+
+/* NOTE
+ * You have already seen how the self keyword lets us refer to our current value ,
+ * so self * self means “multiply my current number by itself.”
+ * Well , there is also Self with a capital S , which has a subtly different meaning :
+ * it means “my current data type.”
+ * So , self means “my current value”
+ * and Self means “my current data type.”
+ */
+extension BinaryInteger {
+    func clamp(low : Self ,
+               high : Self)
+        -> Self {
+        
+        if (self > high) {
+            return high
+        } else if (self < low) {
+            return low
+        }
+
+        return self
+    }
+}
